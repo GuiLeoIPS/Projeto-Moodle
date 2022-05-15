@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <title>Moodle</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/w3.css">
+
+        
+    </head>
+    <body>
+        <div class="cabecalho">
+            <br>
+            <a onclick="document.getElementById('id01').style.display='block'" class="button">Login</a>
+                <p><h2>CLASS MANAGER</h2></p>
+                 <hr>
+        </div>
+        
+        <div class="content">
+            <p>Projeto Programação Web</p>
+
+            <div id="id01" class="modal">
+  
+                <form class="modal-content animate" action="/action_page.php" method="post">
+                  <div class="imgcontainer">
+                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">X</span>
+                    <img src="imagens/img_avatar2.png" alt="Avatar" class="avatar">
+                  </div>
+              
+                  <div class="container">
+                    <p><label for="uname"><b>Username: </b></label><input type="text" placeholder="Enter Username" name="uname" required></p>
+              
+                    <p><label for="psw"><b>Password: </b></label><input type="password" placeholder="Enter Password" name="psw" required></p>
+                      
+                    <button class="loginbutton" type="submit">Login</button>
+                  </div>
+                </form>
+              </div>
+            <p>O projeto da unidade curricular de Programação Web consiste no desenvolvimento de uma aplicação para gestão de turmas. Com a realização do projeto, pretende-se alcançar a consolidação dos conhecimentos e fundamentos teórico-práticos da UC transmitidos e discutidos nas aulas teórico-práticas.</p>
+            <div class="w3-content w3-section" style="max-width:500px">
+                <img class="mySlides" src="imagens/slide1.jpg" style="width:100%">
+                <img class="mySlides" src="imagens/slide2.jpg" style="width:100%">
+                <img class="mySlides" src="imagens/slide3.jpg" style="width:100%">
+            </div>
+
+        </div>
+        
+
+        
+
+
+        <script>
+            var myIndex = 0;
+            carousel();
+
+            function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+            }
+            myIndex++;
+            if (myIndex > x.length) {myIndex = 1}    
+            x[myIndex-1].style.display = "block";  
+            setTimeout(carousel, 2000); // Change image every 2 seconds
+            }
+        </script>
+        
+        
+
+        <!---------------------------------------------------------->
+        <div class="sidenav">
+            
+            <a href="verclass.html">Ver Classe</a>
+            <a href="editarAlunos.html">Gerir Classe</a>
+            <a href="Revisoes.html">Revisões</a>
+	        <a href="Creditos.html">Créditos</a>
+        </div>
+
+        
+        <hr>
+        
+
+        <script>
+            // Get the modal
+            var modal = document.getElementById('id01');
+            
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+    
+    </body>
+</html>
