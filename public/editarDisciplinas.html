@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <title>Moodle</title>
+
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/w3.css">   
+
+        <script src="./javascripts/script2.js" defer></script>
+    </head>
+    <body>
+        
+        <div class="cabecalho">
+           
+            <p><h2>GERIR CLASSE</h2></p>
+             <hr>
+        </div>
+
+        <div id="id01" class="modal">
+  
+            <form class="modal-content animate" action="/action_page.php" method="post">
+              <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">X</span>
+                <img src="imagens/img_avatar2.png" alt="Avatar" class="avatar">
+              </div>
+          
+              <div class="container">
+                <p><label for="uname"><b>Username: </b></label><input type="text" placeholder="Enter Username" name="uname" required></p>
+          
+                <p><label for="psw"><b>Password: </b></label><input type="password" placeholder="Enter Password" name="psw" required></p>
+                  
+                <button class="loginbutton" type="submit">Login</button>
+              </div>
+            </form>
+          </div>    
+
+          <!--   --------------------------MODAL EDITAR---------------------       -->
+          <div id="id02" class="modal">
+  
+            <form class="modal-content animate" action="/api/disciplina/editDisciplina" method="post">
+              <div class="imgcontainer">
+                <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">X</span>
+                <p>Editar Disciplina</p>
+              </div>
+          
+              <div class="container">
+                <input  hidden name="disEditar" id="IDEdita" type="text" value="">
+                <p><label for="disnome"><b>Disciplina: </b></label><input type="text"  name="disnome" required></p>
+          
+                <p><label for="docnome"><b>Docente: </b></label><input type="text"  name="docnome" required></p>
+                  
+                <button class="loginbutton" type="submit">Submeter</button>
+              </div>
+            </form>
+          </div>  
+              <!--  ------------------------------------------------------- -->  
+
+                            <!--   --------------------------MODAL ELIMINAR DISCIPLINA ---------------------       -->
+          <div id="id04" class="modal">
+            <div class="modal-content animate" >
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('id04').style.display='none'" class="close" title="Close Modal">X</span>
+                    <p>Eliminar Disciplina</p>
+                  </div>
+              <div class="container">
+                <p>Tem a certeza que pertende eliminar esta disciplina?</p>
+            <form action="/api/disciplina/deleteDisciplina" method="post">
+                <input  hidden name="disEliminar" id="IDElimina" type="text" value="">
+                <button class="loginbutton" type="submit">Sim</button>
+                <a class="loginbutton" onclick="document.getElementById('id04').style.display='none'">Não</a>
+            </form>
+              </div>
+            </div>
+          </div>
+              <!--  ------------------------------------------------------- -->  
+
+              <!--   --------------------------MODAL ADICIONAR DISCIPLINA---------------------       -->
+              <div id="id03" class="modal">
+  
+                <form class="modal-content animate" action="/api/disciplina/addDisciplina" method="post">
+                  <div class="imgcontainer">
+                    <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">X</span>
+                    <p>Adicionar Disciplina</p>
+                  </div>
+              
+                  <div class="container">
+                    <p><label for="disnome"><b>Disciplina: </b></label><input type="text" name="disnome" required></p>
+              
+                    <p><label for="docnome"><b>Docente: </b></label><input type="text" name="docnome" required></p>
+                      
+                    <button class="loginbutton" type="submit">Submeter</button>
+                  </div>
+                </form>
+              </div>    
+              <!--  ------------------------------------------------------- --> 
+
+
+        <div class="content">
+            <a href="editarAlunos.html"> <button>Alunos</button></a>
+            <a href="editarDisciplinas.html"> <button>Disciplinas</button></a>
+            <a onclick="document.getElementById('id03').style.display='block'"><button>Adicionar Disciplina</button></a>
+            <div class="table">
+            <div class="w3-responsive">
+                <table class="w3-table-all">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Docente</th> 
+                            <th>Editar</th>
+                            <th>Eliminar</th>
+                        </tr>
+                    </thead>
+                   
+                    <tbody id="disciplinas-table">
+
+                    </tbody>                 
+                </table>
+                </div>
+            </div>
+            <br><br><br>
+        </div>
+        
+        
+        <hr>
+        <!---------------------------------------------------------->
+        <div class="sidenav">
+          <a href="Index.html">Página Principal</a>
+          <a href="verclass.html">Ver Classe</a>
+          <a href="editarAlunos.html">Gerir Classe</a>
+          <a href="Revisoes.html">Revisões</a>
+        <a href="Creditos.html">Créditos</a>
+        </div>
+          
+        <script>
+            function legendaon(x, y){
+                document.getElementById(x).style.color = y;
+            }
+
+        </script>  
+        <script>
+          // Get the modal
+          var modal = document.getElementById('id01');
+          var modal2 = document.getElementById('id02');
+          var modal3 = document.getElementById('id03');
+          var modal4 = document.getElementById('id04');
+          
+          // When the user clicks anywhere outside of the modal, close it
+          window.onclick = function(event) {
+              if (event.target == modal || event.target == modal2 || event.target == modal3 || event.target == modal4) {
+                  modal.style.display = "none";
+                  modal2.style.display = "none";
+                  modal3.style.display = "none";
+                  modal4.style.display = "none";
+              }
+          }
+
+
+          
+      </script>
+    </body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <title>Moodle</title>
+
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/w3.css">   
+
+        <script src="./javascripts/scriptRevisao.js" defer></script>
+    </head>
+    <body>
+        
+        <div class="cabecalho">
+            
+            <p><h2>REVISÕES</h2></p>
+            <br>
+            <p><h2>PÁGINA EM DESENVOLVIMENTO!!!</h2></p>
+             <hr>
+        </div>
+
+        <div id="id01" class="modal">
+  
+            <form class="modal-content animate" action="/action_page.php" method="post">
+              <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">X</span>
+                <img src="imagens/img_avatar2.png" alt="Avatar" class="avatar">
+              </div>
+          
+              <div class="container">
+                <p><label for="uname"><b>Username: </b></label><input type="text" placeholder="Enter Username" name="uname" required></p>
+          
+                <p><label for="psw"><b>Password: </b></label><input type="password" placeholder="Enter Password" name="psw" required></p>
+                  
+                <button class="loginbutton" type="submit">Login</button>
+              </div>
+            </form>
+          </div>    
+
+          <!--   --------------------------MODAL EDITAR REVISAO--------------------       -->
+          <div id="id02" class="modal">
+            <form class="modal-content animate" action="/action_page.php" method="post">
+              <div class="imgcontainer">
+                <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">X</span>
+                <p><b>Editar Revisão</b></p>
+              </div>
+              <div class="container">
+                <p><label for="notaantes"><b>Nota Antes de Revisão</b></label><br><textarea name="notaantes" placeholder="Inserir Texto..." form="id02"></textarea></p>
+                <p><label for="notadepois"><b>Nota Depois de Revisão</b></label><br><textarea name="notadepois" placeholder="Inserir Texto..." form="id02"></textarea></p>
+                <p><label for="efetivada"><b>Efetivada: </b></label>
+                    <select name="efetivada" id="efetivada">
+                        <option value="1">Sim</option>
+                        <option value="2">Não</option>
+                        </select></p>
+                <p><label for="fechada"><b>Fechada: </b></label>
+                    <select name="fechada" id="fechada">
+                        <option value="1">Sim</option>
+                        <option value="2">Não</option>
+                        </select></p>
+              </div>
+            </form>
+          </div>
+              <!--  ------------------------------------------------------- -->  
+
+              <!--   --------------------------MODAL ADICIONAR REVISAO---------------------       -->
+              <div id="id03" class="modal">
+  
+                <form class="modal-content animate" action="/action_page.php" method="post">
+                  <div class="imgcontainer">
+                    <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">X</span>
+                    <p>Adicionar Revisão</p>
+                  </div>
+              
+                  <div class="container">
+                    <p><label for="datarev"><b>Data de Revisão: </b></label><input type="date" name="datarev" required></p>
+                    
+                    <p><label for="iddis"><b>ID da disciplina: </b></label>
+                        <select name="iddis" id="iddis">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            </select></p>
+
+                    <p><label for="idalu"><b>ID do aluno: </b></label>
+                    <select name="idalu" id="idalu">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select></p>
+                      
+                    <button class="loginbutton" type="submit">Submeter</button>
+                  </div>
+                </form>
+              </div>    
+              <!--  ------------------------------------------------------- --> 
+
+        <div class="content">
+            <a onclick="document.getElementById('id03').style.display='block'"><button>Adicionar Revisão</button></a>
+            <div class="table">
+            <div class="w3-responsive">
+                <table class="w3-table-all">
+                    <thead>
+                        <tr>
+                          <th>Nome</th>
+                          <th>Professor</th> 
+                          <th>Hora Inicio</th>
+                          <th>Hora fim </th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody id="revisoes-table">
+
+                    </tbody>
+                                    
+                </table>
+                </div>
+            </div>
+            <br><br><br>
+        </div>
+        
+        
+        <hr>
+        <!---------------------------------------------------------->
+        <div class="sidenav">
+      <a href="Index.html">Página Principal</a>
+      <a href="verclass.html">Ver Classe</a>
+      <a href="editarAlunos.html">Gerir Classe</a>
+      <a href="Revisoes.html">Revisões</a>
+    <a href="Creditos.html">Créditos</a>
+        </div>
+          
+        <script>
+            function legendaon(x, y){
+                document.getElementById(x).style.color = y;
+            }
+
+        </script>  
+        <script>
+          // Get the modal
+          var modal = document.getElementById('id01');
+          var modal2 = document.getElementById('id02');
+          var modal3 = document.getElementById('id03');
+          var modal4 = document.getElementById('id04');
+          
+          // When the user clicks anywhere outside of the modal, close it
+          window.onclick = function(event) {
+              if (event.target == modal || event.target == modal2 || event.target == modal3 || event.target == modal4) {
+                  modal.style.display = "none";
+                  modal2.style.display = "none";
+                  modal3.style.display = "none";
+                  modal4.style.display = "none";
+              }
+          }
+
+
+          
+      </script>
+    </body>
+</html>
